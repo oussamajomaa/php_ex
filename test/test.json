@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "mention": "acquis",
+        "intitule": "maquetter_une_application",
+        "acquisition": "comprendre",
+        "created_at": "2020-01-09T20:24:05.844Z",
+        "updated_at": "2020-01-09T20:24:05.844Z"
+    },
+    {
+        "id": 2,
+        "mention": "acquis",
+        "intitule": "maquetter_une_application",
+        "acquisition": "dupliquer",
+        "created_at": "2020-01-09T20:24:25.289Z",
+        "updated_at": "2020-01-09T20:24:25.289Z"
+    },
+    {
+        "id": 3,
+        "mention": "acquis",
+        "intitule": "maquetter_une_application",
+        "acquisition": "analyser",
+        "created_at": "2020-01-09T20:24:37.623Z",
+        "updated_at": "2020-01-09T20:24:37.623Z"
+    },
+    {
+        "id": 4,
+        "mention": "acquis",
+        "intitule": "realiser_une_interface_utilisateur_web_statique_et_adaptable",
+        "acquisition": "comprendre",
+        "created_at": "2020-01-09T20:24:45.465Z",
+        "updated_at": "2020-01-09T20:25:03.706Z"
+    },
+    {
+        "id": 5,
+        "mention": "acquis",
+        "intitule": "maquetter_une_application",
+        "acquisition": "evaluer",
+        "created_at": "2020-01-09T20:26:45.071Z",
+        "updated_at": "2020-01-09T20:26:45.071Z"
+    },
+    {
+        "id": 6,
+        "mention": "acquis",
+        "intitule": "maquetter_une_application",
+        "acquisition": "inventer",
+        "created_at": "2020-01-09T20:27:04.459Z",
+        "updated_at": "2020-01-09T20:27:04.459Z"
+    },
+    {
+        "id": 8,
+        "mention": "acquis",
+        "intitule": "maquetter_une_application",
+        "acquisition": "concevoir",
+        "created_at": "2020-01-09T20:31:33.688Z",
+        "updated_at": "2020-01-09T20:32:05.108Z"
+    },
+    {
+        "id": 9,
+        "mention": "en_cours",
+        "intitule": "realiser_une_interface_utilisateur_web_statique_et_adaptable",
+        "acquisition": "evaluer",
+        "created_at": "2020-01-09T20:32:13.656Z",
+        "updated_at": "2020-01-09T20:32:13.656Z"
+    }
+]

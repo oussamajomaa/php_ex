@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>strapi</title>
+    <style>
+        body{
+            background: black;
+        }
+        table {
+            border-spacing: 4px;
+            width: 90vw;
+            margin: auto;
+        }
+
+        td {
+            border: 1px solid black;
+            font-size: 2em;
+            padding: 5px;
+            width: 50%;
+            text-align: center;
+
+        }
+
+       
+
+        th {
+            font-size: 2em;
+            border: 1px solid black;
+            padding: 15px;
+            background: rgb(107, 0, 0);
+            color: white;
+            margin-top: 15px;
+        }
+
+        tr:nth-child(odd) {
+            background: silver;
+        }
+        tr:nth-child(even) {
+            background: grey;
+        }
+       
+        h1 {
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 3em;
+
+        }
+        .tr td{
+            background: rgb(1, 51, 80);
+            color: rgb(0, 0, 0);
+            height: 3em;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Les compétences métiers</h1>
+    <table id="table1"></table>
+
+    <h1>Les compétences téchniques</h1>
+    <table id="table2"></table>
+
+    <script>
+        let table1 = document.querySelector('#table1');
+        fetch('http://localhost:1337/fiches').then(data => {
+            data.json()
+                .then(data => {
+                    let intitule = "";
+
+                    for (const iterator of data) {
+
+                        if (intitule != iterator.intitule) {
+
+                            let th = document.createElement('th');
+                            th.textContent = iterator.intitule;
+                            table1.appendChild(th);
+                            th.setAttribute('colspan', '2')
+
+                            let tr = document.createElement('tr');
+                            table1.appendChild(tr);
+                            tr.setAttribute('class', 'tr')
+
+                            let td1 = document.createElement('td');
+                            let td2 = document.createElement('td');
+                            td1.textContent = 'Acquisition';
+                            td2.textContent = 'Mention';
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+
+                            intitule = iterator.intitule;
+                        }
+
+                        let tr = document.createElement('tr');
+                        table1.appendChild(tr);
+
+
+                        let td1 = document.createElement('td');
+                        let td2 = document.createElement('td');
+
+                        td1.textContent = iterator.acquisition;
+                        td2.textContent = iterator.mention;
+
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+
+                    }
+                })
+        })
+
+        let table2 = document.querySelector('#table2');
+        fetch('http://localhost:1337/techniques').then(data => {
+            data.json()
+                .then(data => {
+
+                    let intitule = "";
+                    data.forEach(element => {
+
+                        if (intitule != element.intitule) {
+
+                            let th = document.createElement('th');
+                            th.textContent = element.intitule;
+                            table2.appendChild(th);
+                            th.setAttribute('colspan', '2')
+
+                            let tr = document.createElement('tr');
+                            table2.appendChild(tr);
+                            tr.setAttribute('class', 'tr')
+
+                            let td1 = document.createElement('td');
+                            let td2 = document.createElement('td');
+                            td1.textContent = 'Acquisition';
+                            td2.textContent = 'Mention';
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+
+                            intitule = element.intitule;
+                        }
+
+                        let tr = document.createElement('tr');
+                        table2.appendChild(tr);
+
+
+                        let td1 = document.createElement('td');
+                        let td2 = document.createElement('td');
+
+                        td1.textContent = element.acquisition;
+                        td2.textContent = element.mention;
+
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+
+
+                    });
+                })
+        })
+
+    </script>
+</body>
+
+</html>
